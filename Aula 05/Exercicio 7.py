@@ -1,17 +1,38 @@
-#https://www.campuscode.com.br/conteudos/o-calculo-do-digito-verificador-do-cpf-e-do-cnpj
+# https://www.campuscode.com.br/conteudos/o-calculo-do-digito-verificador-do-cpf-e-do-cnpj
+# cpf teste: 145.382.206-20
 
 cpf = input('Qual é o seu cpf (somente números): ')
+intCpf = []
 
-n1 = int(cpf[0])
-n2 = int(cpf[1])
-n3 = int(cpf[2])
-n4 = int(cpf[3])
-n5 = int(cpf[4])
-n6 = int(cpf[5])
-n7 = int(cpf[6])
-n8 = int(cpf[7])
-n9 = int(cpf[8])
+for c in range(0, 11):
+    intCpf.append(int(cpf[c]))
 
-n10 = int(cpf[9])
-n11 = int(cpf[8])
+# Verificador 1 ==================================
+i = 10
+soma = 0
+for c in range(0, 9):
+    soma += intCpf[c] * i
+    i -= 1
 
+verificador1 = 11 - (soma % 11)
+
+if verificador1 >= 10:
+    verificador1 = 0
+
+# Verificador 2 ==================================
+i = 11
+soma = 0
+for c in range(0, 10):
+    soma += intCpf[c] * i
+    i -= 1
+
+verificador2 = 11 - (soma % 11)
+
+if verificador2 >= 10:
+    verificador2 = 0
+
+# Validação CPF ==================================
+if (intCpf[9] == verificador1) and (intCpf[10] == verificador2):
+    print('O cpf inserido é um cpf válido.')
+else:
+    print('O cpf inserido é inválido.')
