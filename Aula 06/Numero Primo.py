@@ -1,5 +1,18 @@
-inicio = 0
-fim = int(input('Insira o numero final: '))
+divs = 0
+x = int(input('Insira um número: '))
+cont = x
+primo = False
 
-while inicio <= fim:
-    
+while cont > 0:
+    if (x % cont) == 0:
+        divs += 1
+
+    cont -= 1
+
+    if divs > 2:
+        primo = False
+        break
+    else:
+        primo = True
+
+print(f'O número informado é primo? {primo}')
