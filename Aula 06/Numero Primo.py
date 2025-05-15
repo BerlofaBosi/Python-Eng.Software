@@ -1,7 +1,5 @@
 divs = 0
-x = int(input('Insira um número: '))
-cont = x
-primo = False
+cont = x = int(input('Insira um número: '))
 
 while cont > 0:
     if (x % cont) == 0:
@@ -12,7 +10,7 @@ while cont > 0:
     if divs > 2:
         primo = False
         break
-    else:
-        primo = True
+
+    primo = True
 
 print(f'O número informado é primo? {primo}')
