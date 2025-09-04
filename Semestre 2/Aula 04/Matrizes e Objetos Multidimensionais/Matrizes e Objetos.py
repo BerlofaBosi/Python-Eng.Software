@@ -15,11 +15,11 @@ matriz = [
 
 lin = 3
 col = 4
-matriz = []
+matriz2 = []
 for j in range(lin):
     linha = []
     for i in range(col):
         linha.append(int(input('Digite um valor: ')))
-    matriz.append(linha)
+    matriz2.append(linha)
 
-print(matriz)
+print(matriz2)
