@@ -6,4 +6,4 @@ def buscaPokemon(nome: str):
     infos = r.json()
     return f"ID: {infos['id']}, \nTipo: {[i['type']['name'] for i in infos['types']]}."
 
-print(buscaPokemon('snorlax'))
+print(buscaPokemon('pikachu'))
