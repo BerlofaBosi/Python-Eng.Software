@@ -8,4 +8,3 @@ def busca(l, c):
     return -1
 
 print(busca(l, 15))
-
